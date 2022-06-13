@@ -22,8 +22,7 @@ class PriceTest {
         prices.addPrice(price2);
         prices.addPrice(price3);
 //    Act
-        int validlist = prices.checkIfValidList();
-        System.out.println(validlist);
+        prices.checkIfValidList();
 
 //    Assert
         assertEquals(1, prices.checkIfValidList());

@@ -13,8 +13,6 @@ public class Main {
         priceList.addPrice(price2);
         priceList.addPrice(price3);
 
-        System.out.println(priceList.isListInSequence());
-        System.out.println(priceList.hasAllPrices());
         System.out.println(priceList.checkIfValidList());
     }
 }
