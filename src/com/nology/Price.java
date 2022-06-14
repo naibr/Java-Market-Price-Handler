@@ -1,8 +1,5 @@
 package com.nology;
 
-import java.sql.Time;
-import java.util.Date;
-
 public class Price {
 
     private final int id;
@@ -23,6 +20,14 @@ public class Price {
         return id;
     }
 
+    public String getInstrumentName() {
+        return instrumentName;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
     public double getBid() {
         return bid;
     }
@@ -40,12 +45,28 @@ public class Price {
     }
 
     public double bidMargin(double bid) {
-        this.bid = bid - (bid * 0.001);
-        return bid;
+        double newBid = bid - (bid * 0.001);
+        setBid(newBid);
+        return newBid;
     }
 
+
     public double askMargin(double ask) {
-        this.ask = ask + (ask * 0.001);
+        double newAsk = ask + (ask * 0.001);
+        setAsk(newAsk);
         return ask;
     }
+
+    @Override
+    public String toString() {
+        return "Price{" +
+                "id=" + id +
+                ", instrumentName='" + instrumentName + '\'' +
+                ", bid=" + bid +
+                ", ask=" + ask +
+                ", timestamp='" + timestamp + '\'' +
+                '}';
+    }
+
+
 }
